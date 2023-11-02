@@ -1,0 +1,72 @@
+A51 MACRO ASSEMBLER  LAB9                                                                 09/22/2023 02:01:38 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\lab9.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE lab9.s SET(SMALL) DEBUG PRINT(.\Listings\lab9.lst) OBJECT(.\Objects\lab
+                      9.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7840              2             MOV R0,#40H
+0002 763F              3             MOV @R0,#3FH
+0004 08                4             INC R0
+0005 7606              5             MOV @R0,#06H
+0007 08                6             INC R0
+0008 765B              7             MOV @R0,#5BH
+000A 08                8             INC R0
+000B 764F              9             MOV @R0,#4FH
+000D 08               10             INC R0
+000E 7666             11             MOV @R0,#66H
+0010 08               12             INC R0
+0011 766D             13             MOV @R0,#6DH
+0013 08               14             INC R0
+0014 767D             15             MOV @R0,#7DH
+0016 08               16             INC R0
+0017 7607             17             MOV @R0,#07H
+0019 08               18             INC R0
+001A 767F             19             MOV @R0,#7FH
+001C 08               20             INC R0
+001D 7667             21             MOV @R0,#67H
+001F 75A000           22             MOV P2,#00H
+                      23             
+0022 7840             24             LOOP:   MOV R0,#40H
+0024 7A0A             25             MOV R2,#0AH
+0026 E6               26             LABEL:  MOV A,@R0
+0027 F5A0             27             MOV P2,A
+0029 1130             28             ACALL DELAY
+002B 08               29             INC R0
+002C DAF8             30             DJNZ R2,LABEL
+002E 80F2             31             JMP LOOP        
+                      32             
+0030 7B15             33             DELAY: MOV R3,#15H
+0032 7CC8             34             LABEL3:MOV R4,#200
+0034 7DC8             35             LABEL2:MOV R5,#200
+0036 DDFE             36             LABEL1:DJNZ R5,LABEL1
+0038 DCFA             37             DJNZ R4,LABEL2
+003A DBF6             38             DJNZ R3,LABEL3
+003C 22               39             RET
+                      40             END
+                                     
+A51 MACRO ASSEMBLER  LAB9                                                                 09/22/2023 02:01:38 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   0030H   A   
+LABEL. . . . . . .  C ADDR   0026H   A   
+LABEL1 . . . . . .  C ADDR   0036H   A   
+LABEL2 . . . . . .  C ADDR   0034H   A   
+LABEL3 . . . . . .  C ADDR   0032H   A   
+LOOP . . . . . . .  C ADDR   0022H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
