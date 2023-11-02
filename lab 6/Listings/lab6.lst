@@ -1,0 +1,38 @@
+A51 MACRO ASSEMBLER  LAB6                                                                 09/08/2023 10:47:39 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\lab6.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE lab6.s SET(SMALL) DEBUG PRINT(.\Listings\lab6.lst) OBJECT(.\Objects\lab
+                      6.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7830              2             MOV R0,#30H
+0002 7931              3             MOV R1,#31H
+0004 7D0A              4             MOV R5,#0AH
+                       5             
+                       6             
+0006 E6                7             LABEL:MOV A,@R0
+0007 08                8             INC R0
+0008 27                9             ADD A,@R1
+0009 09               10             INC R1
+000A F7               11             MOV @R1,A
+000B DDF9             12             DJNZ R5,LABEL
+                      13             END
+A51 MACRO ASSEMBLER  LAB6                                                                 09/08/2023 10:47:39 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+LABEL. . . . . . .  C ADDR   0006H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

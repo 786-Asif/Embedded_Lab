@@ -1,0 +1,42 @@
+A51 MACRO ASSEMBLER  LAB5                                                                 09/08/2023 10:35:58 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\LAB5.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE LAB5.s SET(SMALL) DEBUG PRINT(.\Listings\LAB5.lst) OBJECT(.\Objects\LAB
+                      5.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7830              2             MOV R0,#30H
+0002 7D0A              3             MOV R5,#0AH
+0004 75F000            4             MOV B,#00H
+                       5             
+                       6             
+0007 E6                7             LABEL3:MOV A,@R0
+0008 B40305            8             CJNE A,#03H,LABEL1
+000B 05F0              9             INC B
+000D 08               10             INC R0
+000E DDF7             11             DJNZ R5,LABEL3
+                      12             
+0010 08               13             LABEL1: INC R0
+0011 DDF4             14                             DJNZ R5,LABEL3
+                      15     END
+A51 MACRO ASSEMBLER  LAB5                                                                 09/08/2023 10:35:58 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+LABEL1 . . . . . .  C ADDR   0010H   A   
+LABEL3 . . . . . .  C ADDR   0007H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

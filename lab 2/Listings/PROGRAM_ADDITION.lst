@@ -1,0 +1,43 @@
+A51 MACRO ASSEMBLER  PROGRAM_ADDITION                                                     08/30/2023 21:52:21 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\PROGRAM_ADDITION.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE PROGRAM_ADDITION.S SET(SMALL) DEBUG PRINT(.\Listings\PROGRAM_ADDITION.l
+                      st) OBJECT(.\Objects\PROGRAM_ADDITION.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7810              2             MOV R0,#10H
+0002 7920              3             MOV R1,#20H
+0004 7B05              4             MOV R3,#05H
+                       5     
+0006 E6                6     L1:             MOV A,@R0
+0007 F5F0              7                     MOV B, A
+0009 E7                8                     MOV A, @R1
+000A 25F0              9                     ADD A, B
+000C F7               10                     MOV @R1, A
+000D 08               11                     INC R0
+000E 09               12                     INC R1
+000F DBF5             13                     DJNZ R3, L1
+                      14                     END
+                                             
+                                     
+                                     
+A51 MACRO ASSEMBLER  PROGRAM_ADDITION                                                     08/30/2023 21:52:21 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+L1 . . . . . . . .  C ADDR   0006H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

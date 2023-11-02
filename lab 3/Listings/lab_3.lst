@@ -1,0 +1,54 @@
+A51 MACRO ASSEMBLER  LAB_3                                                                08/25/2023 11:18:29 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\lab_3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE lab_3.s SET(SMALL) DEBUG PRINT(.\Listings\lab_3.lst) OBJECT(.\Objects\l
+                      ab_3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7810              2             MOV R0,#10H
+0002 7913              3             MOV R1,#13H
+0004 E6                4             MOV A,@R0
+0005 87F0              5             MOV B,@R1
+0007 A4                6             MUL AB
+0008 AAF0              7             MOV R2,B
+000A FB                8             MOV R3,A
+000B 08                9             INC R0
+000C 19               10             DEC R1
+000D E6               11             MOV A,@R0
+000E 87F0             12             MOV B,@R1
+0010 A4               13             MUL AB
+0011 FC               14             MOV R4,A
+0012 C3               15             CLR C
+0013 EB               16             MOV A,R3
+0014 9C               17             SUBB A,R4
+0015 FB               18             MOV R3,A
+0016 EA               19             MOV A,R2
+0017 95F0             20             SUBB A,B
+0019 FA               21             MOV R2,A
+001A 7814             22             MOV R0,#14H
+001C EA               23             MOV A,R2
+001D F6               24             MOV @R0,A
+001E 08               25             INC R0
+001F EB               26             MOV A,R3
+0020 F6               27             MOV @R0,A
+                      28             END
+                                     
+A51 MACRO ASSEMBLER  LAB_3                                                                08/25/2023 11:18:29 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

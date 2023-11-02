@@ -1,0 +1,52 @@
+A51 MACRO ASSEMBLER  LAB4                                                                 09/07/2023 20:32:31 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\lab4.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE lab4.s SET(SMALL) DEBUG PRINT(.\Listings\lab4.lst) OBJECT(.\Objects\lab
+                      4.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 C3                2             CLR C
+0001 7C09              3             MOV R4,#09H
+0003 7831              4             MOV R0,#31H
+0005 7E0A              5             MOV R6,#0AH
+0007 1E                6             LABEL3:DEC R6
+0008 EE                7             MOV A,R6
+0009 FD                8             MOV R5,A
+000A E8                9             MOV A,R0
+000B F9               10             MOV R1,A
+000C 09               11             INC R1
+000D E6               12             LABEL1:MOV A,@R0
+000E 97               13             SUBB A,@R1
+000F E6               14             MOV A,@R0
+0010 4005             15             JC LABEL2
+0012 87F0             16             MOV B,@R1
+0014 F7               17             MOV @R1,A
+0015 A6F0             18             MOV @R0,B
+0017 09               19             LABEL2:INC R1
+0018 C3               20             CLR C
+0019 DDF2             21             DJNZ R5,LABEL1
+001B 08               22             INC R0
+001C DCE9             23             DJNZ R4,LABEL3
+                      24             END
+A51 MACRO ASSEMBLER  LAB4                                                                 09/07/2023 20:32:31 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+B. . . . . . . . .  D ADDR   00F0H   A   
+LABEL1 . . . . . .  C ADDR   000DH   A   
+LABEL2 . . . . . .  C ADDR   0017H   A   
+LABEL3 . . . . . .  C ADDR   0007H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
