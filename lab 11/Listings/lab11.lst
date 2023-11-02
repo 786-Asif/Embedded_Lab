@@ -1,0 +1,177 @@
+A51 MACRO ASSEMBLER  LAB11                                                                10/26/2023 12:04:49 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\lab11.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE lab11.s SET(SMALL) DEBUG PRINT(.\Listings\lab11.lst) OBJECT(.\Objects\l
+                      ab11.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7840              2     MOV R0,#40H
+0002 7630              3     MOV @R0,#'0'
+0004 08                4     INC R0
+0005 7631              5     MOV @R0,#'1'
+0007 08                6     INC R0
+0008 7632              7     MOV @R0,#'2'
+000A 08                8     INC R0
+000B 7633              9     MOV @R0,#'3'
+000D 08               10     INC R0
+000E 7634             11     MOV @R0,#'4'
+0010 08               12     INC R0
+0011 7635             13     MOV @R0,#'5'
+0013 08               14     INC R0
+0014 7636             15     MOV @R0,#'6'
+0016 08               16     INC R0
+0017 7637             17     MOV @R0,#'7'
+0019 08               18     INC R0
+001A 7638             19     MOV @R0,#'8'
+001C 08               20     INC R0
+001D 7639             21     MOV @R0,#'9'
+001F 08               22     INC R0
+0020 7630             23     MOV @R0,#'10'
+*** __________________________________^
+*** WARNING #A52 IN 23 (lab11.s, LINE 23): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0022 08               24     INC R0
+0023 7631             25     MOV @R0,#'11'
+*** __________________________________^
+*** WARNING #A52 IN 25 (lab11.s, LINE 25): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0025 08               26     INC R0
+0026 7632             27     MOV @R0,#'12'
+*** __________________________________^
+*** WARNING #A52 IN 27 (lab11.s, LINE 27): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0028 08               28     INC R0
+0029 7633             29     MOV @R0,#'13'
+*** __________________________________^
+*** WARNING #A52 IN 29 (lab11.s, LINE 29): VALUE HAS BEEN TRUNCATED TO 8 BITS
+002B 08               30     INC R0
+002C 7634             31     MOV @R0,#'14'
+*** __________________________________^
+*** WARNING #A52 IN 31 (lab11.s, LINE 31): VALUE HAS BEEN TRUNCATED TO 8 BITS
+002E 08               32     INC R0
+002F 7635             33     MOV @R0,#'15'
+*** __________________________________^
+*** WARNING #A52 IN 33 (lab11.s, LINE 33): VALUE HAS BEEN TRUNCATED TO 8 BITS
+0031                  34     START:
+0031 758000           35     MOV P0,#00H
+0034 759000           36     MOV P1,#00H
+0037 75A0FF           37     MOV P2,#0FFH
+003A 75B000           38     MOV P3,#00H
+003D 7438             39     MOV A,#38H;
+003F 11A1             40     ACALL COMMAND;
+0041 11B9             41     ACALL DELAY;
+0043 740E             42     MOV A,#0EH;
+0045 11A1             43     ACALL COMMAND;
+0047 11B9             44     ACALL DELAY;
+0049 7401             45     MOV A,#01H;
+A51 MACRO ASSEMBLER  LAB11                                                                10/26/2023 12:04:49 PAGE     2
+
+004B 11A1             46     ACALL COMMAND;
+004D 11B9             47     ACALL DELAY;
+004F 7480             48     MOV A,#80H;
+0051 11A1             49     ACALL COMMAND;
+0053 11B9             50     ACALL DELAY;
+                      51     
+0055 115D             52     ACALL ROW0
+0057 116E             53     ACALL ROW1
+0059 117F             54     ACALL ROW2
+005B 1190             55     ACALL ROW3
+005D 783F             56     ROW0: MOV R0,#3FH
+005F 7580FE           57     MOV P0,#0FEH
+0062 E5A0             58     MOV A,P2
+0064 B4FF01           59     CJNE A,#0FFH,CONT1
+0067 22               60     RET
+0068 13               61     CONT1: RRC A
+0069 08               62     INC R0
+006A 5040             63     JNC DATA1
+006C 80FA             64     JMP CONT1
+006E 7843             65     ROW1: MOV R0,#43H
+0070 7580FD           66     MOV P0,#0FDH
+0073 E5A0             67     MOV A,P2
+0075 B4FF01           68     CJNE A,#0FFH,CONT2
+0078 22               69     RET
+0079 13               70     CONT2: RRC A
+007A 08               71     INC R0
+007B 502F             72     JNC DATA1
+007D 80FA             73     JMP CONT2
+007F 7847             74     ROW2: MOV R0,#47H
+0081 7580FB           75     MOV P0,#0FBH
+0084 E5A0             76     MOV A,P2
+0086 B4FF01           77     CJNE A,#0FFH,CONT3
+0089 22               78     RET
+008A 13               79     CONT3: RRC A
+008B 08               80     INC R0
+008C 501E             81     JNC DATA1
+008E 80FA             82     JMP CONT3
+0090 784B             83     ROW3: MOV R0,#4BH
+0092 7580F7           84     MOV P0,#0F7H
+0095 E5A0             85     MOV A,P2
+0097 B4FF01           86     CJNE A,#0FFH,CONT4
+009A 22               87     RET
+009B 13               88     CONT4: RRC A
+009C 08               89     INC R0
+009D 500D             90     JNC DATA1
+009F 80FA             91     JMP CONT4
+                      92     
+                      93     
+                      94     
+                      95     
+                      96     
+                      97     
+00A1 C2B3             98     COMMAND:CLR P3.3
+00A3 F590             99     MOV P1,A;
+00A5 D2B2            100     SETB P3.2;
+00A7 11B9            101     ACALL DELAY;
+00A9 C2B2            102     CLR P3.2;
+00AB 22              103     RET
+00AC D2B3            104     DATA1:SETB P3.3;
+00AE F590            105             MOV P1,A
+00B0 D2B2            106             SETB P3.2;
+00B2 11B9            107             ACALL DELAY;
+00B4 C2B0            108             CLR P3.0
+00B6 11B9            109             ACALL DELAY;
+00B8 22              110             RET
+00B9 7BC8            111     DELAY:MOV R3,#200
+A51 MACRO ASSEMBLER  LAB11                                                                10/26/2023 12:04:49 PAGE     3
+
+00BB 7AFA            112     LABEL2:MOV R2,#250
+00BD DAFE            113     LABEL1:DJNZ R2,LABEL1
+00BF DBFA            114     DJNZ R3,LABEL2
+00C1 22              115     RET
+                     116             
+00C2 00              117     E: NOP
+                     118     END
+A51 MACRO ASSEMBLER  LAB11                                                                10/26/2023 12:04:49 PAGE     4
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+COMMAND. . . . . .  C ADDR   00A1H   A   
+CONT1. . . . . . .  C ADDR   0068H   A   
+CONT2. . . . . . .  C ADDR   0079H   A   
+CONT3. . . . . . .  C ADDR   008AH   A   
+CONT4. . . . . . .  C ADDR   009BH   A   
+DATA1. . . . . . .  C ADDR   00ACH   A   
+DELAY. . . . . . .  C ADDR   00B9H   A   
+E. . . . . . . . .  C ADDR   00C2H   A   
+LABEL1 . . . . . .  C ADDR   00BDH   A   
+LABEL2 . . . . . .  C ADDR   00BBH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+ROW0 . . . . . . .  C ADDR   005DH   A   
+ROW1 . . . . . . .  C ADDR   006EH   A   
+ROW2 . . . . . . .  C ADDR   007FH   A   
+ROW3 . . . . . . .  C ADDR   0090H   A   
+START. . . . . . .  C ADDR   0031H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  6 WARNING(S), 0 ERROR(S)
