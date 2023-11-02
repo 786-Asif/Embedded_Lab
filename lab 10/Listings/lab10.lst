@@ -1,0 +1,141 @@
+A51 MACRO ASSEMBLER  LAB10                                                                10/24/2023 02:58:48 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\lab10.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE lab10.s SET(SMALL) DEBUG PRINT(.\Listings\lab10.lst) OBJECT(.\Objects\l
+                      ab10.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7840              2     MOV R0,#40H
+0002 763F              3     MOV @R0,#3FH
+0004 08                4     INC R0
+0005 7606              5     MOV @R0,#06H
+0007 08                6     INC R0
+0008 765B              7     MOV @R0,#5BH
+000A 08                8     INC R0
+000B 764F              9     MOV @R0,#4FH
+000D 08               10     INC R0
+000E 7666             11     MOV @R0,#66H
+0010 08               12     INC R0
+0011 766D             13     MOV @R0,#6DH
+0013 08               14     INC R0
+0014 767D             15     MOV @R0,#7DH
+0016 08               16     INC R0
+0017 7607             17     MOV @R0,#07H
+0019 08               18     INC R0
+001A 767F             19     MOV @R0,#7FH
+001C 08               20     INC R0
+001D 7667             21     MOV @R0,#67H
+001F 08               22     INC R0
+0020 765F             23     MOV @R0,#5FH
+0022 08               24     INC R0
+0023 767C             25     MOV @R0,#7CH
+0025 08               26     INC R0
+0026 7639             27     MOV @R0,#39H
+0028 08               28     INC R0
+0029 765E             29     MOV @R0,#5EH
+002B 08               30     INC R0
+002C 7679             31     MOV @R0,#79H
+002E 08               32     INC R0
+002F 7671             33     MOV @R0,#71H
+                      34     
+0031                  35     START:
+0031 758000           36     MOV P0,#00H
+0034 75A0FF           37     MOV P2,#0FFH
+0037 75B000           38     MOV P3,#00H
+003A 1142             39     ACALL ROW0
+003C 1153             40     ACALL ROW1
+003E 1164             41     ACALL ROW2
+0040 1175             42     ACALL ROW3
+                      43     
+0042 783F             44     ROW0: MOV R0,#3FH
+0044 7580FE           45                     MOV P0,#0FEH
+0047 E5A0             46                     MOV A,P2
+0049 B4FF01           47                     CJNE A,#0FFH,CONT1
+004C 22               48                     RET
+004D 13               49                     CONT1: RRC A
+004E 08               50                                     INC R0
+004F 5035             51                                     JNC DISPLAY
+0051 80FA             52                                     JMP CONT1
+                      53                                     
+0053 7843             54     ROW1: MOV R0,#43H
+0055 7580FD           55                     MOV P0,#0FDH
+0058 E5A0             56                     MOV A,P2
+005A B4FF01           57                     CJNE A,#0FFH,CONT2
+A51 MACRO ASSEMBLER  LAB10                                                                10/24/2023 02:58:48 PAGE     2
+
+005D 22               58                     RET
+005E 13               59                     CONT2: RRC A
+005F 08               60                                     INC R0
+0060 5024             61                                     JNC DISPLAY
+0062 80FA             62                                     JMP CONT2
+                      63                                                             
+0064 7847             64     ROW2: MOV R0,#47H
+0066 7580FB           65                     MOV P0,#0FBH
+0069 E5A0             66                     MOV A,P2
+006B B4FF01           67                     CJNE A,#0FFH,CONT3
+006E 22               68                     RET
+006F 13               69                     CONT3: RRC A
+0070 08               70                                     INC R0
+0071 5013             71                                     JNC DISPLAY
+0073 80FA             72                                     JMP CONT3
+                      73                                     
+0075 784B             74     ROW3: MOV R0,#4BH
+0077 7580F7           75                     MOV P0,#0F7H
+007A E5A0             76                     MOV A,P2
+007C B4FF01           77                     CJNE A,#0FFH,CONT4
+007F 22               78                     RET
+0080 13               79                     CONT4: RRC A
+0081 08               80                                     INC R0
+0082 5002             81                                     JNC DISPLAY
+0084 80FA             82                                     JMP CONT4
+                      83                                                             
+0086 E6               84     DISPLAY:        MOV A,@R0
+0087 F5B0             85                             MOV P3,A
+0089 118D             86                             ACALL DELAY
+008B 800D             87                             JMP E
+                      88     
+008D 7C0A             89     DELAY:MOV R4,#10
+008F 7BC8             90     LABEL3:MOV R3,#200
+0091 7AFA             91     LABEL2:MOV R2,#250
+0093 DAFE             92     LABEL1:DJNZ R2,LABEL1
+0095 DBFA             93     DJNZ R3,LABEL2
+0097 DCF6             94     DJNZ R4,LABEL3
+0099 22               95     RET
+009A 00               96     E: NOP
+                      97     END                             
+A51 MACRO ASSEMBLER  LAB10                                                                10/24/2023 02:58:48 PAGE     3
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+CONT1. . . . . . .  C ADDR   004DH   A   
+CONT2. . . . . . .  C ADDR   005EH   A   
+CONT3. . . . . . .  C ADDR   006FH   A   
+CONT4. . . . . . .  C ADDR   0080H   A   
+DELAY. . . . . . .  C ADDR   008DH   A   
+DISPLAY. . . . . .  C ADDR   0086H   A   
+E. . . . . . . . .  C ADDR   009AH   A   
+LABEL1 . . . . . .  C ADDR   0093H   A   
+LABEL2 . . . . . .  C ADDR   0091H   A   
+LABEL3 . . . . . .  C ADDR   008FH   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+ROW0 . . . . . . .  C ADDR   0042H   A   
+ROW1 . . . . . . .  C ADDR   0053H   A   
+ROW2 . . . . . . .  C ADDR   0064H   A   
+ROW3 . . . . . . .  C ADDR   0075H   A   
+START. . . . . . .  C ADDR   0031H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
