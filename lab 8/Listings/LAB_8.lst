@@ -1,0 +1,48 @@
+A51 MACRO ASSEMBLER  LAB_8                                                                11/02/2023 22:14:35 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\LAB_8.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE LAB_8.s SET(SMALL) DEBUG PRINT(.\Listings\LAB_8.lst) OBJECT(.\Objects\L
+                      AB_8.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 7400              2             MOV A,#00H
+0002 F5A0              3             MOV P2,A  
+0004 F4                4             LOOP: CPL A
+0005 F5A0              5                       MOV P2,A
+0007 110B              6             ACALL DELAY
+0009 80F9              7             SJMP LOOP
+000B 7C0A              8             DELAY:MOV R4,#10
+000D 7BC8              9                     LABEL3:MOV R3,#200
+000F 7AFA             10                     LABEL2:MOV R2,#250
+0011 DAFE             11                     LABEL1:DJNZ R2,LABEL1
+0013 DBFA             12                     DJNZ R3,LABEL2
+0015 DCF6             13                     DJNZ R4,LABEL3
+0017 22               14                     RET
+                      15             END
+                                             
+                                     
+                                     
+A51 MACRO ASSEMBLER  LAB_8                                                                11/02/2023 22:14:35 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   000BH   A   
+LABEL1 . . . . . .  C ADDR   0011H   A   
+LABEL2 . . . . . .  C ADDR   000FH   A   
+LABEL3 . . . . . .  C ADDR   000DH   A   
+LOOP . . . . . . .  C ADDR   0004H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
